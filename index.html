@@ -71,6 +71,7 @@
 
         <div class="button-area">
             <a href="tel:+27152800186" class="btn">📞 Call Office</a>
+            <a href="tel:+27812571963" class="btn">📱 Call Cell<a>
             <a href="mailto:admin@jhdsecuritysolutions.co.za" class="btn">✉️ Email Us</a>
             <a href="https://jhdsecuritysolutions.co.za" class="btn">🌐 Visit Website</a>
             <button onclick="downloadVCard()" class="btn save-btn">📥 Save Contact</button>
@@ -79,7 +80,7 @@
 
     <script>
         function downloadVCard() {
-            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:JP Slement\nORG:JHD Security Solutions\nTEL:+27152800186\nCEL:+27812571963\nEMAIL:admin@jhdsecuritysolutions.co.za\nEND:VCARD`;
+            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:JP Slement\nORG:JHD Security Solutions\nTEL:+27152800186\nCELL:+27812571963\nEMAIL:admin@jhdsecuritysolutions.co.za\nEND:VCARD`;
             const blob = new Blob([vcard], { type: "text/vcard" });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
@@ -91,6 +92,7 @@
 </body>
 
 </html>
+
 
 
 
