@@ -64,7 +64,7 @@
 <body>
 
     <div class="card">
-        <img src="Logo.jpg" alt="JHD Security Solutions Logo" class="logo">
+        <img src="logo.png" alt="JHD Security Solutions Logo" class="logo">
         
         <h1>JP Slement</h1>
         <p class="subtitle">Managing Director | JHD Security Solutions</p>
@@ -79,7 +79,7 @@
 
     <script>
         function downloadVCard() {
-            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:JP Slement\nORG:JHD Security Solutions\nTEL:+27152800186\nEMAIL:admin@jhdsecuritysolutions.co.za\nEND:VCARD`;
+            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:JP Slement\nORG:JHD Security Solutions\nTEL:+27152800186\nCELL:+27812571963\nEMAIL:admin@jhdsecuritysolutions.co.za\nEND:VCARD`;
             const blob = new Blob([vcard], { type: "text/vcard" });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
@@ -91,5 +91,6 @@
 </body>
 
 </html>
+
 
 
