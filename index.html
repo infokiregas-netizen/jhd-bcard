@@ -3,97 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Slement - JHD Security Solutions</title>
-    
+    <title>JP Slement - Digital Business Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #03ff57;
-            --accent: #000000fe;
-            --bg: #f4f4f4;
+            --primary-color: #26ec00; /* Matching the color in your logo */
+            --dark-color: #545e63;
         }
-
-        body {
-            background-color: var(--bg);
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            margin: 0;
+        body { font-family: 'Arial', sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+        
+        .card { background: white; width: 100%; max-width: 380px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); overflow: hidden; text-align: center; }
+        
+        /* Blue Header Area */
+        .header { background: var(--primary-color); padding: 40px 20px 80px 20px; position: relative; }
+        
+        /* Company Logo - Top Circle */
+        .company-logo { 
+            width: 90px; height: 90px; background: white; border-radius: 50%; 
+            margin: 0 auto; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden;
         }
+        .company-logo img { width: 85%; height: auto; object-fit: contain; }
 
-        .card {
-            background: white;
-            width: 100%;
-            max-width: 350px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            text-align: center;
+        /* Profile Picture - Bottom Circle */
+        .profile-pic {
+            width: 120px; height: 120px; background: white; border-radius: 50%;
+            border: 5px solid white; position: absolute; left: 50%; bottom: -60px;
+            transform: translateX(-50%); box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            overflow: hidden; display: flex; align-items: center; justify-content: center;
         }
+        .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
 
-        .logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
-        }
+        .content { padding: 70px 25px 30px 25px; }
+        h1 { margin: 10px 0 5px; font-size: 24px; color: #333; }
+        .title { color: #777; font-size: 16px; margin-bottom: 25px; }
 
-        h1 { color: var(--primary); margin: 10px 0 5px 0; font-size: 24px; }
-        .subtitle { color: #666; margin-bottom: 25px; font-size: 16px; }
+        .links { text-align: left; }
+        .link-item { display: flex; align-items: center; margin-bottom: 12px; text-decoration: none; color: #444; font-size: 15px; padding: 10px; border-radius: 10px; transition: 0.3s; }
+        .link-item:hover { background: #f9f9f9; }
+        .link-item i { width: 35px; color: var(--primary-color); font-size: 18px; }
 
-        .button-area {
-            display: flex;
-            flex-direction: column;
-            gap: 12px; 
-        }
-
-        .btn {
-            display: block;
-            background: var(--primary);
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .btn:hover { background: var(--accent); }
-        .save-btn { background: var(--accent); border: none; width: 100%; cursor: pointer; font-size: 16px; }
+        .btn-save { background: var(--primary-color); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold; width: 80%; box-shadow: 0 4px 12px rgba(0,123,182,0.3); }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <img src="logo.png" alt="JHD Security Solutions Logo" class="logo">
+        <div class="header">
+            <div class="company-logo">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            
+            <div class="profile-pic">
+                <img src="profile-pic.jpg" alt="Profile">
+            </div>
+        </div>
         
-        <h1>JP Slement</h1>
-        <p class="subtitle">Managing Director | JHD Security Solutions</p>
+        <div class="content">
+            <h1>JP Slement</h1>
+            <p class="title">JHD Security Solutions</p>
 
-        <div class="button-area">
-            <a href="tel:+27152800186" class="btn">📞 Call Office</a>
-            <a href="tel:+27812571963" class="btn">📱 Call Cell<a>
-            <a href="mailto:admin@jhdsecuritysolutions.co.za" class="btn">✉️ Email Us</a>
-            <a href="https://jhdsecuritysolutions.co.za" class="btn">🌐 Visit Website</a>
-            <button onclick="downloadVCard()" class="btn save-btn">📥 Save Contact</button>
+            <div class="links">
+                <a href="tel:0152800186" class="link-item"><i class="fas fa-phone"></i> Office: 015 280 0186</a>
+                <a href="tel:0812571963" class="link-item"><i class="fas fa-mobile-alt"></i> Cell: 081 2571963</a>
+                <a href="https://wa.me/27812571963" class="link-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:admin@jhdsecuritysolutions.co.za" class="link-item"><i class="fas fa-envelope"></i> admin@jhdsecuritysolutions.co.za</a>
+                <a href="https://jhdsecuritysolutions.co.za" class="link-item"><i class="fas fa-globe"></i> jhdsecuritysolutions.co.za</a>
+                <div class="link-item"><i class="fas fa-map-marker-alt"></i> 408, De Wet Drive, Polokwane</div>
+            </div>
+
+            <a href="contact.vcf" class="btn-save">Save to Contacts</a>
         </div>
     </div>
 
-    <script>
-        function downloadVCard() {
-            const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:JP Slement\nORG:JHD Security Solutions\nTEL:+27152800186\nCELL:+27812571963\nEMAIL:admin@jhdsecuritysolutions.co.za\nEND:VCARD`;
-            const blob = new Blob([vcard], { type: "text/vcard" });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "JP_Slement.vcf";
-            a.click();
-        }
-    </script>
 </body>
-
 </html>
-
-
-
 
 
