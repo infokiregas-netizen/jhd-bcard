@@ -3,83 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Slement - Digital Business Card</title>
+    <title>JP Slement - JHD Security Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #26ec00; /* Matching the color in your logo */
-            --dark-color: #545e63;
+            /* CHANGE THESE FOR DIFFERENT CLIENTS */
+            --primary-blue: #26EC00; 
+            --pdf-red: #e74c3c;
+            --bg-gray: #85B279;
         }
-        body { font-family: 'Arial', sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+
+        body { font-family: 'Helvetica', Arial, sans-serif; background: var(--bg-gray); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
         
-        .card { background: white; width: 100%; max-width: 380px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); overflow: hidden; text-align: center; }
+        .card { background: white; width: 100%; max-width: 375px; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; text-align: center; }
         
-        /* Blue Header Area */
-        .header { background: var(--primary-color); padding: 40px 20px 80px 20px; position: relative; }
+        /* Top Blue Header */
+        .header-bg { background: var(--primary-blue); height: 140px; position: relative; padding-top: 20px; }
         
-        /* Company Logo - Top Circle */
+        /* Company Logo (Centered at top) */
         .company-logo { 
-            width: 90px; height: 90px; background: white; border-radius: 50%; 
+            width: 80px; height: 80px; background: white; border-radius: 50%; 
             margin: 0 auto; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden;
         }
-        .company-logo img { width: 85%; height: auto; object-fit: contain; }
+        .company-logo img { width: 80%; height: auto; object-fit: contain; }
 
-        /* Profile Picture - Bottom Circle */
+        /* Profile Picture (Overlapping the blue) */
         .profile-pic {
-            width: 120px; height: 120px; background: white; border-radius: 50%;
-            border: 5px solid white; position: absolute; left: 50%; bottom: -60px;
-            transform: translateX(-50%); box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            overflow: hidden; display: flex; align-items: center; justify-content: center;
+            width: 130px; height: 130px; background: white; border-radius: 50%;
+            border: 6px solid white; position: absolute; left: 50%; bottom: -65px;
+            transform: translateX(-50%); box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
         }
         .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
 
-        .content { padding: 70px 25px 30px 25px; }
-        h1 { margin: 10px 0 5px; font-size: 24px; color: #333; }
-        .title { color: #777; font-size: 16px; margin-bottom: 25px; }
+        .content { padding: 80px 25px 30px 25px; }
+        h1 { margin: 0; font-size: 24px; color: #2c3e50; }
+        .business-name { color: var(--primary-blue); font-weight: 600; margin: 5px 0 25px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .links { text-align: left; }
-        .link-item { display: flex; align-items: center; margin-bottom: 12px; text-decoration: none; color: #444; font-size: 15px; padding: 10px; border-radius: 10px; transition: 0.3s; }
-        .link-item:hover { background: #f9f9f9; }
-        .link-item i { width: 35px; color: var(--primary-color); font-size: 18px; }
+        .links { text-align: left; margin-bottom: 25px; }
+        .link-item { display: flex; align-items: center; margin-bottom: 12px; text-decoration: none; color: #444; font-size: 15px; padding: 12px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; transition: 0.2s; }
+        .link-item:hover { background: #f0f7ff; transform: translateY(-2px); }
+        .link-item i { width: 30px; color: var(--primary-blue); font-size: 18px; margin-right: 10px; text-align: center; }
 
-        .btn-save { background: var(--primary-color); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold; width: 80%; box-shadow: 0 4px 12px rgba(0,123,182,0.3); }
+        /* Action Buttons */
+        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-bottom: 12px; transition: 0.3s; width: 100%; box-sizing: border-box; }
+        .btn i { margin-right: 10px; }
+        
+        .btn-pdf { background: var(--pdf-red); color: white; box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3); }
+        .btn-save { background: var(--primary-blue); color: white; box-shadow: 0 5px 15px rgba(0, 123, 182, 0.3); }
+        .btn:hover { opacity: 0.9; transform: scale(1.02); }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="header">
+        <div class="header-bg">
             <div class="company-logo">
-                <img src="logo.png" alt="Company Logo">
+                <img src="logo.png" alt="logo">
             </div>
-            
             <div class="profile-pic">
-                <img src="profile-pic.jpg" alt="Profile">
+                <img src="https://via.placeholder.com/150" alt="picture">
             </div>
         </div>
         
         <div class="content">
             <h1>JP Slement</h1>
-            <p class="title">JHD Security Solutions</p>
+            <div class="business-name">JHD Security Solutions</div>
 
             <div class="links">
                 <a href="tel:0152800186" class="link-item"><i class="fas fa-phone"></i> Office: 015 280 0186</a>
-                <a href="tel:0812571963" class="link-item"><i class="fas fa-mobile-alt"></i> Cell: 081 2571963</a>
+                <a href="tel:0812571963" class="link-item"><i class="fas fa-mobile-alt"></i> Cell: 081 257 1963</a>
                 <a href="https://wa.me/27812571963" class="link-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 <a href="mailto:admin@jhdsecuritysolutions.co.za" class="link-item"><i class="fas fa-envelope"></i> admin@jhdsecuritysolutions.co.za</a>
                 <a href="https://jhdsecuritysolutions.co.za" class="link-item"><i class="fas fa-globe"></i> jhdsecuritysolutions.co.za</a>
-                <div class="link-item"><i class="fas fa-map-marker-alt"></i> 408, De Wet Drive, Polokwane</div>
-                <a href="https://1drv.ms/b/c/e2245cbebcd4aa09/IQB8G1e2Bjq3T57ZVvm3yFXhAcJdL26PPOXLd1fJXkl3gGs?e=gPVHx2" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> View Business Profile</a>
-             </div>
-            
-            <a href="contact.vcf" class="btn-save">Save to Contacts</a>
+                <div class="link-item"><i class="fas fa-map-marker-alt"></i> 408, De Wer Drive, Polokwane</div>
+            </div>
+
+            <a href="https://1drv.ms/b/c/e2245cbebcd4aa09/IQB8G1e2Bjq3T57ZVvm3yFXhAbH9MRUIIjiPUOzm5QmvE30?e=OkoNnt" target="_blank" class="btn btn-pdf">
+                <i class="fas fa-file-pdf"></i> View Business Profile
+            </a>
+
+            <a href="contact.vcf" class="btn btn-save">
+                <i class="fas fa-user-plus"></i> Save to Contacts
+            </a>
         </div>
     </div>
 
 </body>
 </html>
-
-
-
-
