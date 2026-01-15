@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:JP Slement
+ORG:JHD Security Solutions
+TEL;TYPE=WORK,VOICE:0152800186
+TEL;TYPE=CELL,VOICE:0812571963
+TEL;TYPE=CELL,VOICE:0812571963
+EMAIL:admin@jhdsecuritysolutions.co.za
+URL:https://jhdsecuritysolutions.co.za
+ADR;TYPE=WORK:;;408 De Wet Drive;Polokwane;;0700;South Africa
+PHOTO;VALUE=logo.png
+END:VCARD
